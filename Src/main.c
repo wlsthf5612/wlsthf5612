@@ -99,22 +99,26 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  int dealyValue = 100;
+int delayValue = 0;
   while (1)
   {
-	 if( HAL_GPIO_ReadPin(GPIOB, GPIO_PIN0) == 0)
+
+
+	 if( HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_0) == 0)
 	 {
-		 delayValue = 300;
+		 delayValue = 500;
 		// HAL_Delay(300);
 	 }
 
-	 else if( HAL_GPIO_ReadPin(GPIOB, GPIO_PIN1) == 0 );
+	 else if( HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_1) == 0 )
 	 {
-		 delayValue = 100;
+		 delayValue = 200;
 		 //HAL_Delay(100);
 	 }
-	  HAL_GPIO_TogglePin(GPIOC,GPIO_PIN_13);
-	  HAL_Delay(delayValue);
+
+	 HAL_GPIO_TogglePin(GPIOC,GPIO_PIN_13);
+	 	  HAL_Delay(delayValue);
+
 
   /* USER CODE END WHILE */
 
